@@ -16,11 +16,12 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
     Handler handler;
     Intent intent;
+    private Compiler EdgeToEdge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        EdgeToEdge.enable();
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

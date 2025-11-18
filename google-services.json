@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "629728083724",
+    "project_id": "mealna-firebase-app",
+    "storage_bucket": "mealna-firebase-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629728083724:android:4de9e25fd8bbce183c1329",
+        "android_client_info": {
+          "package_name": "com.company.mealna"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4N2bJ96PQuYoMOvacqDp0JxCUwa-NQ84"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
