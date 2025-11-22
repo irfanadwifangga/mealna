@@ -1,3 +1,83 @@
 <resources>
-    <string name="app_name">Mealna</string>
+    <string name="app_name">MealNa App</string>
+    <string name="desc_logo">Logo MealNa</string>
+    <string name="desc_logo_splash">Logo Utama Aplikasi MealNa</string>
+    <string name="tombol_kembali">Tombol Kembali</string>
+    <string name="tombol_kirim">Kirim</string>
+    <string name="tombol_daftar">Daftar</string>
+
+    <string name="tombol_profile">Profile</string>
+    <string name="nama_pengguna_profil">GHAITZA ZAHIRA</string>
+    <string name="tombol_pengaturan_umum">Pengaturan umum</string>
+    <string name="desc_foto_profil">Foto Profil Pengguna</string>
+    <string name="tombol_keluar">Keluar</string>
+    <string name="judul_pengaturan_umum">Pengaturan Umum</string>
+    <string name="pengaturan_bahasa">Bahasa</string>
+    <string name="bahasa_indonesia">Indonesia</string>
+    <string name="bahasa_inggris">Inggris</string>
+
+    <string name="judul_login_baru">Masuk</string>
+    <string name="judul_login">Selamat Datang Kembali!</string>
+    <string name="subjudul_login">Silakan masukkan detail Anda untuk melanjutkan.</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_email_field">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_password_field">Password</string>
+    <string name="lupa_password">Lupa Password?</string>
+    <string name="tombol_login">LOGIN</string>
+    <string name="tombol_masuk">Masuk</string>
+    <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="link_daftar">Daftar Sekarang</string>
+    <string name="belum_punya_akun_dan_daftar">Belum punya akun ? Daftar</string>
+    <string name="judul_daftar">Daftar</string>
+    <string name="hint_konfirmasi_password">Masukkan Kembali Password</string>
+    <string name="sudah_punya_akun">Sudah memiliki akun?</string>
+    <string name="link_masuk">Masuk</string>
+    <string name="judul_lupa_password">Lupa Password</string>
+    <string name="pesan_lupa_password">Masukkan email anda dan tunggu kode etik akan dikirimkan.</string>
+
+    <string name="judul_makanan_sehat_gizi">Makanan Sehat &amp; Pola Gizi</string>
+    <string name="desc_search_icon">Ikon Pencarian</string>
+    <string name="hint_cari_makanan">Cari makanan</string>
+    <string name="tombol_max_harga">Max Harga\nRp50.000</string>
+    <string name="ditemukan_x_makanan">Ditemukan 15 makanan</string>
+    <string name="tombol_menu_samping">Tombol Menu Samping</string>
+
+    <string name="nama_resep_omelet">Omelet (Telur, sayur, keju parut)</string>
+    <string name="tagline_omelet">Protein tinggi membantu regenerasi sel &amp; kenyang lebih lama</string>
+    <string name="rating_dummy">4.7</string>
+    <string name="harga_resep_dummy">Rp15.000</string>
+
+    <string name="kategori_semua">Semua</string>
+    <string name="kategori_sarapan">Sarapan</string>
+    <string name="desc_gambar_resep">Gambar Resep</string>
+    <string name="nama_resep">Salad Buah Sehat</string>
+    <string name="detail_resep">150 Kalori | 20 Menit</string>
+    <string name="desc_tambah_menu">Tombol Tambah ke Menu</string>
+    <string name="judul_favorit_kosong">Belum Ada Favorit</string>
+    <string name="pesan_favorit_kosong">Simpan menu makanan favorit Anda di sini agar mudah ditemukan kembali.</string>
+    <string name="desc_icon_favorit_kosong">Ikon Hati untuk daftar favorit kosong</string>
+
+    <string name="nama_resep_detail">Salad Buah Super Sehat</string>
+    <string name="info_resep_detail">200 Kalori | 25 Menit Persiapan | Cocok untuk Diet</string>
+    <string name="tambah_ke_meal_plan">Tambah ke Meal Plan</string>
+    <string name="judul_bahan_bahan">Bahan-bahan</string>
+    <string name="daftar_bahan">1. Buah Apel 1 buah\n2. Buah Naga 1/2 buah\n3. Yogurt Plain 100g\n4. Madu 1 sendok teh</string>
+    <string name="judul_langkah_memasak">Langkah-langkah Memasak</string>
+    <string name="daftar_langkah">1. Cuci dan potong semua buah. \n2. Campurkan yogurt dan madu, aduk rata. \n3. Tuang saus yogurt ke atas potongan buah.</string>
+
+    <string name="judul_chatbot">ChatBot</string>
+    <string name="nama_kontak_chat">Coach MealNa</string>
+    <string name="kirim_pesan">Ketik pesan...</string>
+    <string name="judul_faq">Faq</string>
+    <string name="konten_faq">1. Apa itu MealNa?\nMealNa adalah aplikasi yang membantu pengguna menemukan rekomendasi makanan sehat dan bergizi lengkap dengan informasi kalori, nutrisi, dan cara penyajian.\n\n2. Bagaimana cara menyimpan menu favorit?\nKlik ikon bintang pada menu makanan. Menu akan otomatis tersimpan di daftar Favorit Anda.\n\n3. Bagaimana cara mencari menu makanan?\nPengguna dapat menggunakan fitur filter atau search untuk mencari makanan sesuai kategori seperti rendah kalori, vegetarian, tinggi protein, dan lainnya.</string>
+
+    <string name="judul_kalkulasi_gizi">KALKULASI GIZI</string>
+    <string name="subjudul_resep_gizi">Kalkulasi sayur sop sederhana</string>
+    <string name="tombol_hitung">Hitung</string>
+    <string name="hasil_kalkulasi_dummy">Total kalori aktual: ±70 kcal\nProtein: 2 g\nKarbohidrat: 10 g\nAsal sisa energi: sedikit dari lemak/bumbu</string>
+    <string name="nutrisi_kalori_dummy">230-280</string>
+    <string name="label_kalori">Kalori</string>
+    <string name="label_per_porsi">Per Porsi</string>
+    <string name="desc_gambar_resep_besar">Gambar utama resep</string>
 </resources>

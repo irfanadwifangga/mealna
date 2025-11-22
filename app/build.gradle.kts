@@ -55,4 +55,13 @@ dependencies {
     // implementation("com.google.firebase:firebase-auth")
     // implementation("com.google.firebase:firebase-firestore")
     // implementation("com.google.firebase:firebase-storage")
+    // Tambahkan ini untuk ConstraintLayout
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+// Tambahkan ini untuk CardView
+    implementation("androidx.cardview:cardview:1.0.0")
+// Tambahkan ini jika Anda menggunakan material design (untuk BottomNavigationView)
+    implementation("com.google.android.material:material:1.10.0")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 }
+

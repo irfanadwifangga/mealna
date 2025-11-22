@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/rounded_nutrisi_background"
+    android:padding="8dp"
+    android:layout_marginHorizontal="4dp">
+
+    <TextView
+        android:id="@+id/nutrisiValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nutrisi_kalori_dummy"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary_green"/>
+
+    <TextView
+        android:id="@+id/nutrisiLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_kalori"
+        android:textSize="12sp"
+        android:textColor="@color/primary_green"/>
+
+    <TextView
+        android:id="@+id/porsiLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_per_porsi"
+        android:textSize="10sp"
+        android:textColor="#8BC34A"/> </LinearLayout>
