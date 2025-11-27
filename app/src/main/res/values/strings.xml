@@ -1,12 +1,65 @@
 <resources>
     <string name="app_name">MealNa</string>
-    <string name="title_activity_login2">LoginActivity2</string>
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="prompt_password">Kata Sandi</string>
+    <string name="action_sign_in">Masuk atau daftar</string>
+    <string name="action_sign_in_short">Masuk</string>
+    <string name="welcome">"Selamat Datang !"</string>
+    <string name="invalid_username">Nama pengguna tidak valid</string>
+    <string name="invalid_password">Kata sandi harus >5 karakter</string>
+    <string name="login_failed">"Login gagal"</string>
+
+    <string name="welcome_back">Selamat Datang Kembali!</string>
+    <string name="login_button_text">Masuk</string>
+    <string name="dont_have_account_signup">Belum punya akun? Daftar</string>
+    <string name="welcome_home">Selamat Datang di Beranda!</string>
+    <string name="logout_button_text">Keluar</string>
+
+    <!-- Login Activity error messages -->
+    <string name="email_required">Email harus diisi</string>
+    <string name="invalid_email_format">Format email tidak valid</string>
+    <string name="password_required">Kata sandi harus diisi</string>
+    <string name="login_success">Login berhasil!</string>
+    <string name="email_not_registered">Email tidak terdaftar.</string>
+    <string name="wrong_password">Kata sandi salah.</string>
+    <string name="login_failed_general">Login gagal: </string>
+
+    <!-- Register Activity messages/errors -->
+    <string name="password_min_length">Kata sandi minimal 6 karakter</string>
+    <string name="password_not_match">Kata sandi tidak sama</string>
+    <string name="register_success">Registrasi berhasil!</string>
+    <string name="email_already_registered">Email ini sudah terdaftar. Silakan masuk.</string>
+    <string name="register_failed_general">Registrasi gagal: </string>
+    <string name="register_button_text">Daftar</string>
+    <string name="already_have_account_login">Sudah punya akun? Masuk</string>
+
+    <!-- Profile Setup Activity -->
+    <string name="setup_profile_title">Atur Profil Anda</string>
+    <string name="setup_profile_subtitle">Beri tahu kami lebih banyak tentang diri Anda untuk mempersonalisasi pengalaman Anda.</string>
+    <string name="full_name_hint">Nama Lengkap</string>
+    <string name="age_hint">Usia</string>
+    <string name="height_hint">Tinggi (cm)</string>
+    <string name="weight_hint">Berat (kg)</string>
+    <string name="gender_label">Jenis Kelamin</string>
+    <string name="male_radio_button">Pria</string>
+    <string name="female_radio_button">Wanita</string>
+    <string name="diseases_label">Apakah Anda memiliki salah satu dari penyakit ini?</string>
+    <string name="hypertension_checkbox">Hipertensi</string>
+    <string name="diabetes_checkbox">Diabetes</string>
+    <string name="allergies_label">Apakah Anda memiliki alergi?</string>
+    <string name="peanut_checkbox">Kacang</string>
+    <string name="seafood_checkbox">Makanan Laut</string>
+    <string name="dairy_checkbox">Susu</string>
+    <string name="diet_prefs_label">Ada preferensi diet?</string>
+    <string name="low_carb_checkbox">Rendah Karbohidrat</string>
+    <string name="vegetarian_checkbox">Vegetarian</string>
+    <string name="vegan_checkbox">Vegan</string>
+    <string name="main_goal_label">Apa tujuan utama Anda?</string>
+    <string name="save_profile_button">Simpan Profil &amp; Mulai</string>
+
+    <string-array name="goal_options">
+        <item>Turunkan Berat Badan</item>
+        <item>Pertahankan Berat Badan</item>
+        <item>Tambah Otot</item>
+    </string-array>
 </resources>

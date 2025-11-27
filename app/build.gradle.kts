@@ -11,6 +11,10 @@ android {
     namespace = "com.example.mealna"
     compileSdk = 36
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.mealna"
         minSdk = 24
@@ -32,11 +36,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        jvmToolchain(17)
     }
 
     buildFeatures {
@@ -61,9 +65,20 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     // === FIREBASE ===
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
-    implementation(libs.firebase.auth.ktx)
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+
+    // When using the BoM, you don't specify versions for Firebase libraries
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+    // Add any other Firebase dependencies you need without versions
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("com.google.firebase:firebase-appcheck-playintegrity")
+
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
+
+    implementation(libs.androidx.material3)
+    implementation(libs.firebase.appcheck.debug)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

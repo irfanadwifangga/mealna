@@ -1,71 +1,112 @@
 package com.example.mealna
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
+import android.util.Patterns
+import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.mealna.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var emailEditText: TextInputEditText
-    private lateinit var passwordEditText: TextInputEditText
-    private lateinit var emailInputLayout: TextInputLayout
-    private lateinit var passwordInputLayout: TextInputLayout
-    private lateinit var loginButton: Button
-    private lateinit var signUpTextView: TextView
+    private lateinit var binding: ActivityLoginBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_login)
 
-        // Initialize views
-        emailEditText = findViewById(R.id.et_email)
-        passwordEditText = findViewById(R.id.et_password)
-        emailInputLayout = findViewById(R.id.til_email)
-        passwordInputLayout = findViewById(R.id.til_password)
-        loginButton = findViewById(R.id.btn_login)
-        signUpTextView = findViewById(R.id.tv_signup)
+        installSplashScreen()
 
-        // Set click listener for login button
-        loginButton.setOnClickListener {
-            val email = emailEditText.text.toString().trim()
-            val password = passwordEditText.text.toString().trim()
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-            var isValid = true
+        auth = FirebaseAuth.getInstance()
 
-            if (email.isEmpty()) {
-                emailInputLayout.error = "Email is required"
-                isValid = false
-            } else {
-                emailInputLayout.error = null
-            }
+        checkUserSession()
 
-            if (password.isEmpty()) {
-                passwordInputLayout.error = "Password is required"
-                isValid = false
-            } else {
-                passwordInputLayout.error = null
-            }
-
-            if (isValid) {
-                // TODO: Add Firebase authentication logic here
-                Toast.makeText(this, "Login button clicked", Toast.LENGTH_SHORT).show()
-            }
+        binding.btnLogin.setOnClickListener {
+            performLogin()
         }
 
-        // Set click listener for sign up text
-        signUpTextView.setOnClickListener {
-            // TODO: Create and navigate to RegisterActivity
-             Toast.makeText(this, "Navigate to Sign Up screen", Toast.LENGTH_SHORT).show()
-            // val intent = Intent(this, RegisterActivity::class.java)
-            // startActivity(intent)
+        binding.tvSignup.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
+    }
+
+    private fun checkUserSession() {
+        if (auth.currentUser != null) {
+            navigateToHome()
+        }
+    }
+
+    private fun performLogin() {
+        val email = binding.etEmail.text.toString().trim()
+        val password = binding.etPassword.text.toString().trim()
+
+        if (email.isEmpty()) {
+            binding.tilEmail.error = "Email harus diisi"
+            binding.etEmail.requestFocus()
+            return
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            binding.tilEmail.error = "Format email tidak valid"
+            binding.etEmail.requestFocus()
+            return
+        }
+
+        binding.tilEmail.error = null
+
+        if (password.isEmpty()) {
+            binding.tilPassword.error = "Password harus diisi"
+            binding.etPassword.requestFocus()
+            return
+        }
+
+        binding.tilPassword.error = null
+
+        showLoading(true)
+
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                showLoading(false)
+
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Login berhasil!", Toast.LENGTH_SHORT).show()
+                    navigateToHome()
+                } else {
+                    val exception = task.exception
+                    val errorMessage = when (exception) {
+                        is FirebaseAuthInvalidUserException -> "Email tidak terdaftar."
+                        is FirebaseAuthInvalidCredentialsException -> "Password salah."
+                        else -> "Login gagal: ${exception?.message}"
+                    }
+                    Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+                }
+            }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+            binding.btnLogin.isEnabled = false
+            binding.btnLogin.text = ""
+        } else {
+            binding.progressBar.visibility = View.GONE
+            binding.btnLogin.isEnabled = true
+            binding.btnLogin.text = "Login"
+        }
+    }
+
+    private fun navigateToHome() {
+        val intent = Intent(this, HomeActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }
