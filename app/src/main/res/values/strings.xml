@@ -57,6 +57,15 @@
     <string name="main_goal_label">Apa tujuan utama Anda?</string>
     <string name="save_profile_button">Simpan Profil &amp; Mulai</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Mealna: Tingkatkan Kualitas Hidup Anda Melalui Gizi.</string>
+    <string name="onboarding_desc_1">"Mealna adalah teman tepercaya Anda dalam perjalanan menuju hidup yang lebih sehat. Kami membantu Anda mencatat setiap asupan makanan dengan mudah dan akurat, menganalisis kandungan nutrisi (kalori, protein, lemak, karbohidrat, vitamin), dan memahami kebiasaan makan Anda."</string>
+    <string name="onboarding_title_2">Analisis Gizi Komplet: Ketahui persis apa yang Anda konsumsi.</string>
+    <string name="onboarding_desc_2">Mealna hadir untuk memberikan Anda jawaban. Kami tidak hanya mencatat makanan; kami membantu Anda membuat keputusan nutrisi yang lebih baik setiap hari.</string>
+    <string name="onboarding_title_3">Capai Target: Pantau kemajuan Anda menuju tujuan berat badan atau kesehatan tertentu.</string>
+    <string name="onboarding_desc_3">"Lupakan pencatatan diet yang rumit! Mealna dirancang untuk membuat pemantauan nutrisi menjadi mudah, cepat, dan menyenangkan. Hanya dengan beberapa ketukan, Anda bisa memiliki jurnal makanan bergizi yang komprehensif. Mulai kendalikan kesehatan Anda hari ini, tanpa perlu stres menghitung!"</string>
+    <string name="get_started">Mulai</string>
+
     <string-array name="goal_options">
         <item>Turunkan Berat Badan</item>
         <item>Pertahankan Berat Badan</item>

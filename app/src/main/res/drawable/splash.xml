@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Latar Belakang Gradien -->
+    <item android:drawable="@drawable/bg_splash_gradient" />
+
+    <!-- Logo di atas, di tengah, dengan ukuran yang disesuaikan -->
     <item
+        android:width="200dp"
+        android:height="200dp"
         android:drawable="@drawable/mealna_logo"
         android:gravity="center" />
+
 </layer-list>

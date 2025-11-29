@@ -5,7 +5,6 @@ import android.util.Log
 import com.google.firebase.FirebaseApp
 import com.google.firebase.appcheck.FirebaseAppCheck
 import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
-import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
 
 class AppActivity : Application() {
     override fun onCreate() {
@@ -18,14 +17,12 @@ class AppActivity : Application() {
             Log.e("FIREBASE", "Firebase GAGAL TERHUBUNG!")
         }
 
-        // Initialize App Check with Debug Provider
+        // Initialize App Check with Debug Provider for testing
         val firebaseAppCheck = FirebaseAppCheck.getInstance()
         firebaseAppCheck.installAppCheckProviderFactory(
             DebugAppCheckProviderFactory.getInstance()
         )
 
-        // Log untuk melihat token debug
         Log.d("APP_CHECK", "App Check initialized with Debug Provider")
     }
 }
-    
