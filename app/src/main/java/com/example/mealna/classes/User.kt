@@ -10,7 +10,7 @@ data class User(
 
 data class UserProfile(
     val height: Int = 0,
-    val weight: Int = 0,
+    val weight: Double = 0.0,
     val age: Int = 0,
     val gender: String = "",
     val diseases: List<String> = emptyList(),
