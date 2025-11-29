@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".AccountSettingsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_light">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="Pengaturan Akun"
+            app:titleCentered="true" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Accordion 2: Preferensi Bahasa -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/accordion_language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Accordion Header -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/header_language"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/primary_green"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Preferensi Bahasa"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                            android:textColor="@color/text_primary_light"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/arrow_language"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_down"
+                            app:tint="@color/text_primary_light"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Accordion Content -->
+                    <LinearLayout
+                        android:id="@+id/content_language"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:background="@color/background_dark"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@android:color/transparent"
+                            app:cardElevation="0dp"
+                            app:cardCornerRadius="8dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="@color/text_secondary_dark">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="12dp"
+                                android:textColor="@color/text_primary_dark"
+                                android:text="Indonesia"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:cardBackgroundColor="@android:color/transparent"
+                            app:cardElevation="0dp"
+                            app:cardCornerRadius="8dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="@color/text_secondary_dark">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="12dp"
+                                android:textColor="@color/text_primary_dark"
+                                android:text="Inggris"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Accordion 3: Pusat Bantuan -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/accordion_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Accordion Header -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/header_help"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/primary_green"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pusat Bantuan &amp; Dukungan"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                            android:textColor="@color/text_primary_light"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/arrow_help"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_down"
+                            app:tint="@color/text_primary_light"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Accordion Content -->
+                    <LinearLayout
+                        android:id="@+id/content_help"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="4dp"
+                            android:textColor="?attr/colorOnSurface"
+                            android:text="1. Apa itu MealNa?\nMealNa adalah aplikasi yang membantu pengguna menemukan rekomendasi makanan sehat dan bergizi lengkap dengan informasi kalori, nutrisi, dan cara penyajian.\n\n2. Bagaimana cara menyimpan menu favorit?\nKlik ikon ⭐ pada menu makanan. Menu akan otomatis tersimpan di daftar Favorit Anda.\n\n3. Bagaimana cara mencari menu makanan?\nPengguna dapat menggunakan fitur filter atau search untuk mencari makanan sesuai kategori seperti rendah kalori, vegetarian, tinggi protein, dan lainnya."/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

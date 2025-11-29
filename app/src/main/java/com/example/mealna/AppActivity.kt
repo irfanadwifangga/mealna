@@ -1,28 +1,20 @@
 package com.example.mealna
 
 import android.app.Application
-import android.util.Log
 import com.google.firebase.FirebaseApp
 import com.google.firebase.appcheck.FirebaseAppCheck
-import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
+import java.util.ServiceLoader
 
 class AppActivity : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        val app = FirebaseApp.initializeApp(this)
-        if (app != null) {
-            Log.d("FIREBASE", "Firebase BERHASIL TERHUBUNG dari Application Class!")
-        } else {
-            Log.e("FIREBASE", "Firebase GAGAL TERHUBUNG!")
-        }
+        // Initialize Firebase
+        FirebaseApp.initializeApp(this)
 
-        // Initialize App Check with Debug Provider for testing
+        // Initialize Firebase App Check
         val firebaseAppCheck = FirebaseAppCheck.getInstance()
-        firebaseAppCheck.installAppCheckProviderFactory(
-            DebugAppCheckProviderFactory.getInstance()
-        )
-
-        Log.d("APP_CHECK", "App Check initialized with Debug Provider")
+        val appCheckInstaller = ServiceLoader.load(AppCheckInstaller::class.java).firstOrNull()
+        appCheckInstaller?.installAppCheck(firebaseAppCheck)
     }
 }
