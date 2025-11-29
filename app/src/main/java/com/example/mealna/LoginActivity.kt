@@ -1,6 +1,9 @@
+
 package com.example.mealna
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
@@ -16,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+        sharedPreferences = getSharedPreferences("MealNaPrefs", Context.MODE_PRIVATE)
 
         checkUserSession()
 
@@ -40,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkUserSession() {
         if (auth.currentUser != null) {
-            navigateToHome()
+            checkOnboardingStatus()
         }
     }
 
@@ -78,7 +83,7 @@ class LoginActivity : AppCompatActivity() {
 
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Login berhasil!", Toast.LENGTH_SHORT).show()
-                    navigateToHome()
+                    checkOnboardingStatus()
                 } else {
                     val exception = task.exception
                     val errorMessage = when (exception) {
@@ -91,6 +96,20 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
+    private fun checkOnboardingStatus() {
+        val hasSeenOnboarding = sharedPreferences.getBoolean("has_seen_onboarding", false)
+
+        val intent = if (hasSeenOnboarding) {
+            Intent(this, HomeActivity::class.java)
+        } else {
+            sharedPreferences.edit().putBoolean("has_seen_onboarding", true).apply()
+            Intent(this, OnboardingActivity::class.java)
+        }
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
     private fun showLoading(isLoading: Boolean) {
         if (isLoading) {
             binding.progressBar.visibility = View.VISIBLE
@@ -101,12 +120,5 @@ class LoginActivity : AppCompatActivity() {
             binding.btnLogin.isEnabled = true
             binding.btnLogin.text = "Login"
         }
-    }
-
-    private fun navigateToHome() {
-        val intent = Intent(this, HomeActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        startActivity(intent)
-        finish()
     }
 }
