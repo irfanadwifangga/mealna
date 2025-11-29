@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="@color/background_dark"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Food Image -->
+        <ImageView
+            android:id="@+id/iv_food_image"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <!-- Favorite Icon -->
+        <ImageView
+            android:id="@+id/iv_favorite"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="12dp"
+            android:padding="8dp"
+            android:background="@drawable/bg_scrim_circle"
+            android:src="@drawable/ic_favorite_border"
+            app:tint="@android:color/white"
+            app:layout_constraintTop_toTopOf="@id/iv_food_image"
+            app:layout_constraintEnd_toEndOf="@id/iv_food_image"
+            android:contentDescription="@string/favorite_icon_desc" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tv_food_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:textColor="@color/text_primary_dark"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/iv_food_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Omelet (Telur, sayur, keju parut)" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tv_food_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/text_secondary_dark"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintStart_toStartOf="@id/tv_food_title"
+            app:layout_constraintEnd_toEndOf="@id/tv_food_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_food_title"
+            tools:text="Protein tinggi membantu regenerasi sel &amp; kenyang lebih lama." />
+
+        <!-- Price as a Chip -->
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_price_chip"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+            android:textColor="@color/text_primary_dark"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_food_description"
+            tools:text="Rp15.000" />
+
+        <!-- Rating -->
+        <TextView
+            android:id="@+id/tv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:textColor="@color/primary_green"
+            app:drawableStartCompat="@drawable/ic_star"
+            app:drawableTint="@color/primary_green"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_price"
+            app:layout_constraintBottom_toBottomOf="@id/tv_price"
+            tools:text="4.7" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/text_secondary_dark"
+            app:layout_constraintStart_toStartOf="@id/tv_food_title"
+            app:layout_constraintEnd_toEndOf="@id/tv_price"
+            app:layout_constraintTop_toBottomOf="@id/tv_price"/>
+
+        <!-- Nutrition Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="12dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintStart_toStartOf="@id/tv_food_title"
+            app:layout_constraintEnd_toEndOf="@id/tv_price">
+
+            <TextView style="@style/NutritionItem" android:id="@+id/tv_calories_info" tools:text="250 Kal"/>
+            <View style="@style/NutritionItem.Separator"/>
+            <TextView style="@style/NutritionItem" android:id="@+id/tv_carbs_info" tools:text="4g Karbo"/>
+            <View style="@style/NutritionItem.Separator"/>
+            <TextView style="@style/NutritionItem" android:id="@+id/tv_protein_info" tools:text="14g Protein"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

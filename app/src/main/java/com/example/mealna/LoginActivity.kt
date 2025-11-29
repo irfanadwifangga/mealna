@@ -1,4 +1,3 @@
-
 package com.example.mealna
 
 import android.content.Context
@@ -22,9 +21,10 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+        // Handle the splash screen transition.
         installSplashScreen()
+
+        super.onCreate(savedInstanceState)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -32,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         sharedPreferences = getSharedPreferences("MealNaPrefs", Context.MODE_PRIVATE)
 
+        // The theme-based splash screen will automatically dismiss. We just need to check the user session.
         checkUserSession()
 
         binding.btnLogin.setOnClickListener {
@@ -45,7 +46,12 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkUserSession() {
         if (auth.currentUser != null) {
+            // User is logged in, navigate to the correct screen.
+            // The splash screen will dismiss as this activity finishes.
             checkOnboardingStatus()
+        } else {
+            // No user is logged in. The login screen is already visible.
+            // No special action is needed to dismiss the splash screen.
         }
     }
 

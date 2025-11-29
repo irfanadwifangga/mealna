@@ -56,6 +56,7 @@
     <string name="vegan_checkbox">Vegan</string>
     <string name="main_goal_label">Apa tujuan utama Anda?</string>
     <string name="save_profile_button">Simpan Profil &amp; Mulai</string>
+    <string name="save_button_text">Simpan</string>
 
     <!-- Onboarding -->
     <string name="onboarding_title_1">Mealna: Tingkatkan Kualitas Hidup Anda Melalui Gizi.</string>
@@ -65,6 +66,25 @@
     <string name="onboarding_title_3">Capai Target: Pantau kemajuan Anda menuju tujuan berat badan atau kesehatan tertentu.</string>
     <string name="onboarding_desc_3">"Lupakan pencatatan diet yang rumit! Mealna dirancang untuk membuat pemantauan nutrisi menjadi mudah, cepat, dan menyenangkan. Hanya dengan beberapa ketukan, Anda bisa memiliki jurnal makanan bergizi yang komprehensif. Mulai kendalikan kesehatan Anda hari ini, tanpa perlu stres menghitung!"</string>
     <string name="get_started">Mulai</string>
+
+    <!-- Home Screen -->
+    <string name="profile_icon_desc">Ikon Profil</string>
+    <string name="notifications_icon_desc">Ikon Notifikasi</string>
+    <string name="home_title">Makanan Sehat &amp; Pola Gizi</string>
+    <string name="home_welcome_title">Apa Menu Sehatmu Hari Ini?</string>
+    <string name="search_hint">Cari makanan</string>
+    <string name="max_price_label">Max Harga</string>
+    <string name="price_placeholder">Rp50.000</string>
+    <string name="found_label">Ditemukan 15 makanan</string>
+    <string name="breakfast_tab">Sarapan</string>
+    <string name="lunch_tab">Makan Siang</string>
+    <string name="dinner_tab">Makan Malam</string>
+    <string name="favorite_icon_desc">Ikon Favorit</string>
+
+    <!-- Food Detail Screen -->
+    <string name="back_button_desc">Tombol Kembali</string>
+    <string name="nutrition_info_title">Informasi Nutrisi</string>
+    <string name="add_to_cart_button">Tambah ke Keranjang</string>
 
     <string-array name="goal_options">
         <item>Turunkan Berat Badan</item>
