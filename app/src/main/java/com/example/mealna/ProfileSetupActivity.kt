@@ -38,7 +38,7 @@ class ProfileSetupActivity : AppCompatActivity() {
 
         setupSpinner()
 
-        binding.btnSaveProfile.setOnClickListener {
+        binding.btnSave.setOnClickListener {
             saveProfileData()
         }
     }
@@ -109,7 +109,7 @@ class ProfileSetupActivity : AppCompatActivity() {
             profile = userProfile
         )
 
-        binding.btnSaveProfile.isEnabled = false
+        binding.btnSave.isEnabled = false
         db.collection("users").document(userId!!)
             .set(user)
             .addOnSuccessListener {
@@ -122,7 +122,7 @@ class ProfileSetupActivity : AppCompatActivity() {
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Error saat menyimpan profil: ${e.message}", Toast.LENGTH_LONG).show()
-                binding.btnSaveProfile.isEnabled = true
+                binding.btnSave.isEnabled = true
             }
     }
 }

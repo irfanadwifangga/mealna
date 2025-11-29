@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.MealNa" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+    <!-- Base application theme. -->
+    <style name="Theme.MealNa" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_green</item>
+        <item name="colorPrimaryVariant">@color/primary_green_dark</item>
+        <item name="colorOnPrimary">@color/text_primary_light</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/accent_green</item>
+        <item name="colorSecondaryVariant">@color/primary_green_dark</item>
+        <item name="colorOnSecondary">@color/text_primary_light</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Background and surface colors. -->
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorSurface">@color/background_light</item>
+        <item name="colorOnBackground">@color/text_primary_dark</item>
+        <item name="colorOnSurface">@color/text_primary_dark</item>
+    </style>
 
+    <!-- Splash Screen Theme -->
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenAnimatedIcon">@drawable/splash</item>
+        <item name="windowSplashScreenBackground">@color/primary_green</item>
         <item name="postSplashScreenTheme">@style/Theme.MealNa</item>
     </style>
+
 </resources>

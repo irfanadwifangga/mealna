@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base Nutrition Card Style for Detail Screen -->
+    <style name="NutritionCard" parent="Widget.Material3.CardView.Filled">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <!-- Specific Nutrition Card Colors -->
+    <style name="NutritionCard.Calories">
+        <item name="cardBackgroundColor">@color/primary_green_light</item>
+    </style>
+    <style name="NutritionCard.Carbs">
+        <item name="cardBackgroundColor">@color/primary_green_light</item>
+    </style>
+    <style name="NutritionCard.Protein">
+        <item name="cardBackgroundColor">@color/primary_green_light</item>
+    </style>
+    <style name="NutritionCard.Fat">
+        <item name="cardBackgroundColor">@color/primary_green_light</item>
+    </style>
+
+    <style name="NutritionLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="NutritionValue" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary_dark</item>
+    </style>
+
+    <style name="NutritionLabel" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_primary_dark</item>
+    </style>
+
+    <!-- Call to Action Button Style -->
+    <style name="CallToAction.Button" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/primary_green</item>
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <!-- Minimalist Nutrition Info for Item Card -->
+    <style name="NutritionItem" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_secondary_dark</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="NutritionItem.Separator">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:background">@color/text_secondary_dark</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_weight">0</item>
+    </style>
+
+    <!-- Modern Filter Chip Style -->
+    <style name="FilterChip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_background_state</item>
+        <item name="android:textColor">@color/chip_text_state</item>
+        <item name="chipStrokeColor">@color/primary_green</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>
