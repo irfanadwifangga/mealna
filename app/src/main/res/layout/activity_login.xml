@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@color/background_light"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -24,11 +25,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/welcome_back"
-        android:textSize="24sp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@color/text_primary_dark"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+        app:layout_constraintTop_toBottomOf="@id/iv_logo" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_email"
@@ -38,7 +40,7 @@
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_login_title">
+        app:layout_constraintTop_toBottomOf="@id/tv_login_title">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email"
@@ -56,7 +58,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_email"
+        app:layout_constraintTop_toBottomOf="@id/til_email"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -69,6 +71,7 @@
 
     <Button
         android:id="@+id/btn_login"
+        style="@style/CallToAction.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -76,7 +79,7 @@
         android:text="@string/login_button_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_password" />
+        app:layout_constraintTop_toBottomOf="@id/til_password" />
 
     <TextView
         android:id="@+id/tv_signup"
@@ -84,19 +87,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/dont_have_account_signup"
+        android:textColorLink="@color/primary_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_login"
-        app:layout_constraintEnd_toEndOf="@+id/btn_login"
-        app:layout_constraintStart_toStartOf="@+id/btn_login"
-        app:layout_constraintTop_toTopOf="@+id/btn_login"
+        android:indeterminateTint="@color/primary_green"
+        app:layout_constraintBottom_toBottomOf="@id/btn_login"
+        app:layout_constraintEnd_toEndOf="@id/btn_login"
+        app:layout_constraintStart_toStartOf="@id/btn_login"
+        app:layout_constraintTop_toTopOf="@id/btn_login"
         tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

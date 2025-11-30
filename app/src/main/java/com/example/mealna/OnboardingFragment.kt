@@ -23,13 +23,20 @@ class OnboardingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Bail out if the layout ID is invalid to prevent a crash.
+        if (layoutResId == 0) {
+            return null
+        }
+
         val view = inflater.inflate(layoutResId, container, false)
+
+        // Safely find the button and set the listener only if the layout is correct.
         if (layoutResId == R.layout.onboarding_3) {
-            val getStartedButton = view.findViewById<Button>(R.id.btn_get_started)
-            getStartedButton.setOnClickListener {
+            view.findViewById<Button>(R.id.btn_get_started)?.setOnClickListener {
                 (activity as? OnboardingActivity)?.navigateToHome()
             }
         }
+
         return view
     }
 
