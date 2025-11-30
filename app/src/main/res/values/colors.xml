@@ -17,4 +17,7 @@
     <color name="background_light">#FFFFFF</color>
     <color name="background_dark">#F5F5F5</color>
 
+    <!-- Other Colors -->
+    <color name="red">#FF0000</color>
+
 </resources>

@@ -16,9 +16,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/onboarding_image_description"
         app:layout_constraintBottom_toTopOf="@+id/tv_onboarding_title"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/tv_onboarding_title"

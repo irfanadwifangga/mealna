@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">MealNa</string>
+    <string name="logo_description">Logo MealNa</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Kata Sandi</string>
     <string name="action_sign_in">Masuk atau daftar</string>
@@ -59,6 +60,7 @@
     <string name="save_button_text">Simpan</string>
 
     <!-- Onboarding -->
+    <string name="onboarding_image_description">Gambar Onboarding</string>
     <string name="onboarding_title_1">Mealna: Tingkatkan Kualitas Hidup Anda Melalui Gizi.</string>
     <string name="onboarding_desc_1">"Mealna adalah teman tepercaya Anda dalam perjalanan menuju hidup yang lebih sehat. Kami membantu Anda mencatat setiap asupan makanan dengan mudah dan akurat, menganalisis kandungan nutrisi (kalori, protein, lemak, karbohidrat, vitamin), dan memahami kebiasaan makan Anda."</string>
     <string name="onboarding_title_2">Analisis Gizi Komplet: Ketahui persis apa yang Anda konsumsi.</string>

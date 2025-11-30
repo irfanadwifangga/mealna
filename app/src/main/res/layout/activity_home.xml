@@ -103,23 +103,27 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_breakfast"
-                style="@style/FilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/breakfast_tab"
                 android:checked="true"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_lunch"
-                style="@style/FilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/lunch_tab"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_dinner"
-                style="@style/FilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/dinner_tab"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_price"
-                style="@style/FilterChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:chipIcon="@drawable/ic_price_tag"
                 tools:text="Max Rp50.000"/>
 

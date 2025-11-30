@@ -23,9 +23,20 @@ class HomeActivity : AppCompatActivity() {
 
         setupRecyclerView()
         setupFilterChips()
+        setupNavigation()
 
         // Load initial data for the default checked chip
         updateFoodList("Sarapan")
+    }
+
+    private fun setupNavigation() {
+        binding.ivProfile.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
+
+        binding.ivNotifications.setOnClickListener {
+            startActivity(Intent(this, AccountSettingsActivity::class.java))
+        }
     }
 
     private fun setupRecyclerView() {
